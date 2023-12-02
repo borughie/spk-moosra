@@ -1,0 +1,14 @@
+.dataTables_wrapper .dataTables_length select,
+.dataTables_wrapper .dataTables_filter input {
+    border-radius: var(--rounded-btn, 0.5rem);
+    border-color: rgb(55 65 81);
+    border-width: 2px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    border-radius: var(--rounded-btn, 0.5rem);
+    background: linear-gradient(to bottom, rgba(230, 230, 230, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%);
+}
