@@ -1,7 +1,6 @@
 <?php
 include './src/koneksi.php';
 
-session_start();
 if (isset($_SESSION['pesan'])) {
     $pesan = $_SESSION['pesan'];
     unset($_SESSION['pesan']);
@@ -27,7 +26,7 @@ if ($result->num_rows > 0) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -36,7 +35,7 @@ if ($result->num_rows > 0) {
     <?php include './src/header.php'; ?>
 </head>
 
-<body onload="<?= @$pesan ?>">
+<body onload="<?= @$pesan ?>" class="select-none">
     <?php include './src/navbar.php'; ?>
 
     <section id="tabel" class="max-w-7xl mx-auto">

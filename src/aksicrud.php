@@ -120,23 +120,3 @@ if (isset($_POST['binput'])) {
         }
     }
 }
-
-
-if (isset($_POST['blogin'])) {
-    $tampil = mysqli_query($koneksi, "SELECT * FROM tbuser WHERE nim = '$_POST[tnim]'");
-    $data = mysqli_fetch_array($tampil);
-
-    if ($data) {
-        if (md5($_POST['tpassword']) == $data['password']) {
-            $_SESSION['id'] = $data['iduser'];
-            $_SESSION['pesan'] = 'login()';
-            header('location:../beranda.php');
-        } else {
-            $_SESSION['pesan'] = 'password()';
-            header('location:../index.php');
-        }
-    } else {
-        $_SESSION['pesan'] = 'username()';
-        header('location:../index.php');
-    }
-}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -21,7 +21,7 @@
         let timerInterval
         Swal.fire({
             icon: 'warning',
-            html: '<div class="drop-shadow-md text-transparent bg-clip-text bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 font-bold text-3xl">Anda Belum Login</div> <div class="text-gray-700 font-semibold">Silahkan Login Terlebih Dahulu.</div>',
+            html: '<div class="drop-shadow-md text-transparent bg-clip-text bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 font-bold text-3xl>Anda Belum Login</div><div class="text-gray-700 font-semibold">Silahkan Login Terlebih Dahulu.</div>',
             timer: 2000,
             timerProgressBar: true,
             didOpen: () => {

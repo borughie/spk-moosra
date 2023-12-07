@@ -1,7 +1,6 @@
 <?php
 include './src/koneksi.php';
 
-session_start();
 if (isset($_SESSION['pesan'])) {
     $pesan = $_SESSION['pesan'];
     unset($_SESSION['pesan']);
@@ -47,8 +46,9 @@ if (isset($_GET['hal'])) {
 
         if ($data) {
             $hapus = mysqli_query($koneksi, "DELETE FROM tbalternatif WHERE idalternatif = '$_GET[id]'");
+            $hapus1 = mysqli_query($koneksi, "DELETE FROM tbhitung WHERE idalternatif = '$_GET[id]'");
 
-            if ($hapus) {
+            if ($hapus && $hapus1) {
                 session_start();
                 $_SESSION['pesan'] = 'hapus()';
                 header('location:./alternatif.php');
@@ -72,7 +72,7 @@ if (isset($_GET['hal'])) {
     <?php include './src/header.php'; ?>
 </head>
 
-<body onload="<?= @$pesan ?>">
+<body onload="<?= @$pesan ?>" class="select-none">
     <?php include './src/navbar.php'; ?>
 
     <section id="isi" class="max-w-7xl mx-auto">

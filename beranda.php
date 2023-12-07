@@ -1,7 +1,6 @@
 <?php
 include './src/koneksi.php';
 
-session_start();
 if (isset($_SESSION['pesan'])) {
     $pesan = $_SESSION['pesan'];
     unset($_SESSION['pesan']);
@@ -13,7 +12,7 @@ if (empty($_SESSION['id'])) {
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -22,7 +21,7 @@ if (empty($_SESSION['id'])) {
     <?php include './src/header.php'; ?>
 </head>
 
-<body onload="<?= @$pesan ?>">
+<body onload="<?= @$pesan ?>" class="select-none">
     <?php include './src/navbar.php'; ?>
 
     <div class="max-w-5xl mx-auto flex flex-col items-center justify-center h-screen -mt-20">
@@ -33,7 +32,7 @@ if (empty($_SESSION['id'])) {
         <div class="text-center mb-24">Multi Objective Optimazation on the basis of Simple Ratio Analysis (MOOSRA) adalah metode yang digunakan untuk mengevaluasi alternatif-alternatif dalam sistem multi-kriteria dengan menentukan pilihan terbaik yang dioptimalkan berdasarkan kriteria yang diinginkan</div>
 
         <div class="grid grid-cols-3 gap-4 justify-center items-center w-[46rem]">
-            <a href="./alternatif.php" class="card bg-gray-900 hover:bg-gray-950 transition-all duration-300 shadow-xl">
+            <a href="./alternatif.php" class="card bg-base-200 hover:bg-base-300 transition-all duration-300 shadow-xl">
                 <div class="card-body">
                     <h2 class="card-title">Alternatif</h2>
                     <?php
@@ -47,7 +46,7 @@ if (empty($_SESSION['id'])) {
                     ?>
                 </div>
             </a>
-            <a href="./kriteria.php" class="card bg-gray-900 hover:bg-gray-950 transition-all duration-300 shadow-xl">
+            <a href="./kriteria.php" class="card bg-base-200 hover:bg-base-300 transition-all duration-300 shadow-xl">
                 <div class="card-body">
                     <h2 class="card-title">Kriteria</h2>
                     <?php
@@ -61,7 +60,7 @@ if (empty($_SESSION['id'])) {
                     ?>
                 </div>
             </a>
-            <a href="./subkriteria.php" class="card bg-gray-900 hover:bg-gray-950 transition-all duration-300 shadow-xl">
+            <a href="./subkriteria.php" class="card bg-base-200 hover:bg-base-300 transition-all duration-300 shadow-xl">
                 <div class="card-body">
                     <h2 class="card-title">Sub Kriteria</h2>
                     <?php
@@ -76,9 +75,6 @@ if (empty($_SESSION['id'])) {
                 </div>
             </a>
         </div>
-
-        <div class=""></div>
-
     </div>
 
 </body>

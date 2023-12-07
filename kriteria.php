@@ -1,7 +1,6 @@
 <?php
 include './src/koneksi.php';
 
-session_start();
 if (isset($_SESSION['pesan'])) {
     $pesan = $_SESSION['pesan'];
     unset($_SESSION['pesan']);
@@ -70,7 +69,7 @@ if (isset($_GET['hal'])) {
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -79,7 +78,7 @@ if (isset($_GET['hal'])) {
     <?php include './src/header.php'; ?>
 </head>
 
-<body onload="<?= @$pesan ?>">
+<body onload="<?= @$pesan ?>" class="select-none">
     <?php include './src/navbar.php'; ?>
 
     <section id="isi">

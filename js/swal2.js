@@ -13,7 +13,7 @@ function simpan() {
 
     Toast.fire({
         icon: "success",
-        html: '<div class="drop-shadow-md text-transparent bg-clip-text bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 font-bold text-xl">Berhasil Menyimpan Data</div>',
+        html: '<div class="drop-shadow-md text-transparent bg-clip-text bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 font-bold text-xl flex items-center gap-3">Berhasil Menyimpan Data</div>',
     });
 }
 
@@ -32,7 +32,7 @@ function gagalsimpan() {
 
     Toast.fire({
         icon: "error",
-        html: '<div class="drop-shadow-md text-transparent bg-clip-text bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 font-bold text-xl">Gagal Menyimpan data ke Database</div>',
+        html: '<div class="drop-shadow-md text-transparent bg-clip-text bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 font-bold text-xl flex items-center gap-3">Gagal Menyimpan data ke Database</div>',
     });
 }
 
@@ -51,7 +51,7 @@ function update() {
 
     Toast.fire({
         icon: "success",
-        html: '<div class="drop-shadow-md text-transparent bg-clip-text bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 font-bold text-xl">Berhasil Memperbarui Data</div>',
+        html: '<div class="drop-shadow-md text-transparent bg-clip-text bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 font-bold text-xl flex items-center gap-3">Berhasil Memperbarui Data</div>',
     });
 }
 
@@ -70,7 +70,45 @@ function gagalupdate() {
 
     Toast.fire({
         icon: "error",
-        html: '<div class="drop-shadow-md text-transparent bg-clip-text bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 font-bold text-xl">Gagal Memperbarui Data ke Database</div>',
+        html: '<div class="drop-shadow-md text-transparent bg-clip-text bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 font-bold text-xl flex items-center gap-3">Gagal Memperbarui Data ke Database</div>',
+    });
+}
+
+function hapus() {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "center",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer);
+            toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+    });
+
+    Toast.fire({
+        icon: "success",
+        html: '<div class="drop-shadow-md text-transparent bg-clip-text bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 font-bold text-xl flex items-center gap-3">Berhasil Menghapus Data</div>',
+    });
+}
+
+function gagalhapus() {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "center",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer);
+            toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+    });
+
+    Toast.fire({
+        icon: "error",
+        html: '<div class="drop-shadow-md text-transparent bg-clip-text bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 font-bold text-xl flex items-center gap-3">Gagal Menghapus Data Dari Database</div>',
     });
 }
 
@@ -89,7 +127,7 @@ function login() {
 
     Toast.fire({
         icon: "success",
-        html: '<div class="drop-shadow-md text-transparent bg-clip-text bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 font-bold text-xl">Login Berhasil</div>',
+        html: '<div class="drop-shadow-md text-transparent bg-clip-text bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 font-bold text-xl flex items-center gap-3">Login Berhasil</div>',
     });
 }
 
@@ -108,7 +146,7 @@ function logout() {
 
     Toast.fire({
         icon: "success",
-        html: '<div class="drop-shadow-md text-transparent bg-clip-text bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 font-bold text-xl">Logout Berhasil</div>',
+        html: '<div class="drop-shadow-md text-transparent bg-clip-text bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 font-bold text-xl flex items-center gap-3">Logout Berhasil</div>',
     });
 }
 
@@ -127,7 +165,7 @@ function password() {
 
     Toast.fire({
         icon: "error",
-        html: '<div class="drop-shadow-md text-transparent bg-clip-text bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 font-bold text-xl">Password yang anda masukan salah</div>',
+        html: '<div class="drop-shadow-md text-transparent bg-clip-text bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 font-bold text-xl flex items-center gap-3">Password yang anda masukan salah</div>',
     });
 }
 
@@ -146,6 +184,6 @@ function username() {
 
     Toast.fire({
         icon: "error",
-        html: '<div class="drop-shadow-md text-transparent bg-clip-text bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 font-bold text-xl">NIM Tidak Ditemukan</div>',
+        html: '<div class="drop-shadow-md text-transparent bg-clip-text bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 font-bold text-xl flex items-center gap-3">NIM Tidak Ditemukan</div>',
     });
 }
